@@ -1,47 +1,94 @@
 # TB030-ApiRestSQL
 
-### EJERCICIO - API REST con Express - Posts del blog
+### SQL API REST con Express - Posts del blog
 
-2. Modificar la BBDD del ejemplo de clase para que no se puedan insertar entries repetidas por título (Hay que alterar algo en la tabla)
+Con PostgresSQL.
 
-3. Completar la API del back de clase con las siguientes rutas:
 
-- [GET] http://localhost:3000/api/entries
+## Endpoints:
 
-Modificar la query SQL para que me devuelva una respuesta con los datos del autor y sin ID de la entry:
+
+### `/api/entries (GET)`
+
+Devuelve una lista con todos los posts.
+
+### `/api/entries?email=ejemplo@gmail.com (GET)`
+
+Devuelve los posts del autor que se le pasa por req.query.
+
+### `/api/entries (POST)`
+
+Publica un post. Debe incluirse title, content, email (del autor) y category. Ejemplo:
 
 ```javascript
 {
-"title": "noticia desde Node",
-"content": "va a triunfar esto2",
-"date": "2022-03-20T23:00:00.000Z",
-"category": "sucesos",
-"name": "Alejandru",
-"surname": "Regex",
-"image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
-},
+    title:"La nueva tortilla vegana triunfa",
+    content:"Hecha con harina de garbanzos, pura proteína",
+    email:"alejandru@thebridgeschool.es",
+    category:"Actualidad"
+}
 ```
-En vez de esta respuesta, que es la que está ahora:
+
+### `/api/entries/:title (PUT)`
+
+Modifica la publicación (newTitle, content y category), pasando el título actual poor req.params.
+
+Puedes modificar el ejemplo anterior:
+
+En `/api/entries/La%20nueva%20tortilla%20vegana%20triunfa`
+
+Pasar por req.body:
 ```javascript
- {
-"id_entry": 2,
-"title": "Noticia: Un panda suelto por la ciudad",
-"content": "El panda se comió todas las frutas de una tienda",
-"date": "2022-03-15T23:00:00.000Z",
-"email_author":"alvaru@thebridgeschool.es"
-"category": "Sucesos"
-},
+{
+    title:"La nueva tortilla vegana no es tan nueva",
+    content:"Veganos llevan decadas disfrutandola"
+    category:"Estilo de vida"
+}
 ```
-- [PUT] http://localhost:3000/api/entries/ (parecido a POST) modifica una entry por completo con nuevos datos y retorna un status 200. Buscar por título para editar entry.
-- [DELETE] http://localhost:3000/api/entries/ Borra una entry y retorna un status 200. Búsqueda por título de entry para borrar. Payload {message: "Se ha borrado la entry 'Título de noticia' "}
+### `/api/entries (DELETE)`
 
-4. Habilitar rutas para autores en el servidor del ejemplo de clase:
+Elimina la publicación pasando el title por req.body.
 
-- [GET] http://localhost:3000/api/authors Retorna un objeto con los datos de todos los autores. Retorna un status 200
-- [GET] http://localhost:3000/api/authors?email=alejandru@thebridgeschool.es Retorna un objeto con los datos del autor buscado. Retorna un status 200
-- [POST] http://localhost:3000/api/authors/ Se envía por POST los datos del autor a crear y retorna un status 201. Payload `{message: "usuario creado: guillermu@thebridgeschool.es"}`
-- [PUT] http://localhost:3000/api/authors/ Actualiza los datos de un autor y retorna un status 200. Payload `{message: "usuario actualizado: guillermu@thebridgeschool.es"}`
-- [DELETE] http://localhost:3000/api/authors/ Borra un autor y retorna un status 200. Búsqueda por email. Payload `{message: "Se ha borrado guillermu@thebridgeschool.es"}`
+```javascript
+{
+    title:"La nueva tortilla vegana no es tan nueva"
+}
+```
 
 
-Ejercicio de referencia en: https://github.com/TheBridge-FullStackDeveloper/temario_fullstack_FT_nov22/blob/master/teoria/back/clase16.md
+### `/api/author (GET)`
+
+Devuelve una lista con todos los autores.
+
+### `/api/author/?email=ejemplo@gmail.com (GET)`
+
+Devuelve un autor que pasando el email por req.query.
+
+### `/api/author (POST)`
+
+Crea un nuevo autor incluyendo los campos name, surname, email y image. Ejemplo:
+```javascript
+{
+    name:"Friedrich",
+    surname:"Nietzsche",
+    email:"elnietzsche",
+    image:"https://www.biografiasyvidas.com/biografia/n/fotos/nietzsche_2.jpg"
+}
+```
+### `/api/author/:email (PUT)`
+
+Modifica un autor pasando su email actual por req.params y los nuevos datos en req.body. Ejemplo:
+
+`{"name":"Rick","surname":"picklerick","email":"ricksanchez@multiverse.com","image":"https://avatarfiles.alphacoders.com/128/thumb-128984.png"}`
+
+### `/api/author (DELETE)`
+
+Envia el email en req.body para eliminar autor.
+```javascript
+{
+    email:"ricksanchez@multiverse.com"
+}
+```
+
+
+Referencia del ejercicio en: https://github.com/TheBridge-FullStackDeveloper/temario_fullstack_FT_nov22/blob/master/teoria/back/clase16.md

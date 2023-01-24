@@ -2,7 +2,6 @@ const pool = require('../utils/db_pgsql')
 const queries = require('../queries/entry.queries')
 
 
-// GET
 const getEntriesByEmail = async (email) => {
     let client, result;
     try {
@@ -18,7 +17,6 @@ const getEntriesByEmail = async (email) => {
     return result
 }
 
-// GET
 const getAllEntries = async () => {
     let client, result;
     try {
@@ -34,7 +32,6 @@ const getAllEntries = async () => {
     return result
 }
 
-// CREATE
 const createEntry = async (entry) => {
     const { title, content, email, category } = entry;
     let client, result;
@@ -51,7 +48,6 @@ const createEntry = async (entry) => {
     return result
 }
 
-//UPDATE
 const updateEntry = async (title, entry) => {
     const targetTitle = title;
     const { newTitle, content, category } = entry;
@@ -68,7 +64,6 @@ const updateEntry = async (title, entry) => {
     }
     return result
 }
-// DELETE 
 
 const deleteEntry = async (entry) => {
     const { title } = entry;
@@ -95,28 +90,3 @@ const entries = {
 }
 
 module.exports = entries;
-
-
-// Pruebas
-/*
-    getEntriesByEmail("birja@thebridgeschool.es")
-    .then(data=>console.log(data))
-*/
-
-/*
-getAllEntries()
-.then(data=>console.log(data))
-*/
-
-/*
-let newEntry = {
-    title: "Se acabaron las mandarinas de TB",
-    content: "Corren rumores de que papa noel tenía un saco vacio y lo llenó",
-    email: "guillermu@thebridgeschool.es",
-    category: "sucesos"
-}
-
-createEntry(newEntry)
-    .then(data => console.log(data))
-    */
-
