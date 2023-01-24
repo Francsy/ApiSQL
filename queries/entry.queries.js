@@ -20,6 +20,4 @@ const db_queries_entries = {
 
 }
 
-
-
 module.exports = db_queries_entries;

@@ -33,7 +33,6 @@ const getAllAuthors = async () => {
     return result
 }
 
-// CREATE
 const createAuthor = async (entry) => {
     const { name, surname, email, image } = entry;
     let client, result;
