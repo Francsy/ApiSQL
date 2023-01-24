@@ -78,8 +78,13 @@ Crea un nuevo autor incluyendo los campos name, surname, email y image. Ejemplo:
 ### `/api/author/:email (PUT)`
 
 Modifica un autor pasando su email actual por req.params y los nuevos datos en req.body. Ejemplo:
-
-`{"name":"Rick","surname":"picklerick","email":"ricksanchez@multiverse.com","image":"https://avatarfiles.alphacoders.com/128/thumb-128984.png"}`
+```javascript
+{
+    "name":"Rick",
+    "surname":"picklerick",
+    "email":"ricksanchez@multiverse.com",
+    "image":"https://avatarfiles.alphacoders.com/128/thumb-128984.png"
+ }```
 
 ### `/api/author (DELETE)`
 
