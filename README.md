@@ -1,4 +1,4 @@
-# ApiSQL
+# TB030-ApiRestSQL
 
 ### EJERCICIO - API REST con Express - Posts del blog
 
@@ -44,4 +44,4 @@ En vez de esta respuesta, que es la que está ahora:
 - [DELETE] http://localhost:3000/api/authors/ Borra un autor y retorna un status 200. Búsqueda por email. Payload `{message: "Se ha borrado guillermu@thebridgeschool.es"}`
 
 
-Ejercicio de referencia en: (https://github.com/TheBridge-FullStackDeveloper/temario_fullstack_FT_nov22/blob/master/teoria/back/clase16.md)
+Ejercicio de referencia en: https://github.com/TheBridge-FullStackDeveloper/temario_fullstack_FT_nov22/blob/master/teoria/back/clase16.md
