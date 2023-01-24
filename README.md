@@ -84,11 +84,13 @@ Modifica un autor pasando su email actual por req.params y los nuevos datos en r
     "surname":"picklerick",
     "email":"ricksanchez@multiverse.com",
     "image":"https://avatarfiles.alphacoders.com/128/thumb-128984.png"
- }```
+ }
+```
 
 ### `/api/author (DELETE)`
 
 Envia el email en req.body para eliminar autor.
+
 ```javascript
 {
     email:"ricksanchez@multiverse.com"
