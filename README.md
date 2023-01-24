@@ -43,4 +43,5 @@ En vez de esta respuesta, que es la que está ahora:
 - [PUT] http://localhost:3000/api/authors/ Actualiza los datos de un autor y retorna un status 200. Payload `{message: "usuario actualizado: guillermu@thebridgeschool.es"}`
 - [DELETE] http://localhost:3000/api/authors/ Borra un autor y retorna un status 200. Búsqueda por email. Payload `{message: "Se ha borrado guillermu@thebridgeschool.es"}`
 
-![img](../../assets/back/clase16/restapimeme.jpg)
+
+Ejercicio de referencia en: (https://github.com/TheBridge-FullStackDeveloper/temario_fullstack_FT_nov22/blob/master/teoria/back/clase16.md)
