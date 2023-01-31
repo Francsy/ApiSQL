@@ -5,11 +5,11 @@ const morgan = require('morgan')
 require('dotenv').config()
 
 //Middleware
-const error404 = require('./middlewares/error404')
+const error404 = require(__dirname + '/middlewares/error404')
 
 // Módulos de Rutas
-const entriesApiRoutes = require('./routes/entriesApiRoutes')
-const authorApiRoutes = require('./routes/authorApiRoutes')
+const entriesApiRoutes = require(__dirname + '/routes/entriesApiRoutes')
+const authorApiRoutes = require(__dirname + '/routes/authorApiRoutes')
 
 const app = express()
 const port = 3000
