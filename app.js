@@ -20,6 +20,10 @@ app.use(morgan('dev'))
 app.use(express.json()); // Habilitar tipo de dato a recibir
 app.use(express.urlencoded({ extended: true }));
 
+app.get('/', (req, res) => {
+    res.status(200).json({ msg: "Hello World" });
+  })
+
 //Rutas 
 app.use('/api/entries',entriesApiRoutes); // Rutas API entries
 app.use('/api/author', authorApiRoutes);
