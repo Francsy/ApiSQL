@@ -5,7 +5,7 @@ const morgan = require('morgan')
 require('dotenv').config()
 
 //Middleware
-const error404 = require(__dirname + '/middlewares/error404')
+// const error404 = require(__dirname + '/middlewares/error404')
 
 // Módulos de Rutas
 const entriesApiRoutes = require(__dirname + '/routes/entriesApiRoutes')
@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
 //Rutas 
 app.use('/api/entries',entriesApiRoutes); // Rutas API entries
 app.use('/api/author', authorApiRoutes);
-app.use(error404); // Middleware Para ruta no encontrada (404)
+// app.use(error404); // Middleware Para ruta no encontrada (404)
 
 app.listen(port, () => {
     console.log(
