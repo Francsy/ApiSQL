@@ -1,6 +1,6 @@
 const express = require('express');
 
-const authorApiController = require('../controllers/authorApiController');
+const authorApiController = require(__dirname + '/../controllers/authorApiController');
 const authorApiRouter = express.Router();
 
 authorApiRouter.get('/', authorApiController.getAuthors)

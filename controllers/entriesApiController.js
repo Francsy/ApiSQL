@@ -1,4 +1,4 @@
-const entry = require('../models/entries'); // Importar el modelo de la BBDD
+const entry = require(__dirname + '/../models/entries'); // Importar el modelo de la BBDD
 
 
 const getEntries = async (req, res) => {

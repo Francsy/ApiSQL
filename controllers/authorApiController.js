@@ -1,4 +1,4 @@
-const author = require('../models/author')
+const author = require(__dirname + '/../models/author')
 
 
 const getAuthors = async (req, res) => {

@@ -1,6 +1,6 @@
 const express = require('express');
 // Rutas de productos
-const entriesApiController = require("../controllers/entriesApiController");
+const entriesApiController = require(__dirname + "/../controllers/entriesApiController");
 const entriesApiRouter = express.Router();
 
 entriesApiRouter.get('/', entriesApiController.getEntries);

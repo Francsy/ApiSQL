@@ -1,5 +1,5 @@
-const pool = require('../utils/db_pgsql')
-const queries = require('../queries/entry.queries')
+const pool = require(__dirname + '/../utils/db_pgsql')
+const queries = require(__dirname + '/../queries/entry.queries')
 
 
 const getEntriesByEmail = async (email) => {
